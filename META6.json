@@ -1,0 +1,19 @@
+{
+  "meta-version": "0",
+  "name": "Test::Harness",
+  "version": "0.0.0",
+  "auth": "github:littlebenlittle",
+  "description": "simple test harness",
+  "source-url": "github.com/littlebenlittle/raku-test-harness",
+  "perl": "6.d",
+  "author": "Ben Little <ben.little@benlittle.dev>",
+  "tags": [
+    "test",
+    "harness",
+    "runner"
+  ],
+  "license": "Artistic-2.0",
+  "provides": {
+    "Test::Harness": "lib/Test/Harness.rakumod"
+  }
+}
