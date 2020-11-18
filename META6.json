@@ -17,7 +17,7 @@
     "Test::Harness": "lib/Test/Harness.rakumod"
   },
 	"resources": [
-    "resources/fixtures/1.t",
-    "resources/fixtures/2.t"
+    "fixtures/1.t",
+    "fixtures/2.t"
 	]
 }
