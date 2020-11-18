@@ -15,5 +15,9 @@
   "license": "Artistic-2.0",
   "provides": {
     "Test::Harness": "lib/Test/Harness.rakumod"
-  }
+  },
+	"resources": [
+    "resources/fixtures/1.t",
+    "resources/fixtures/2.t"
+	]
 }
