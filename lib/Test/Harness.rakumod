@@ -1,5 +1,7 @@
 
-unit package Test::Harness:auth<github:littlebenlittle>:ver<0.0.0>;
+unit package Test::Harness:auth<github:littlebenlittle>:ver<0.0.1>;
+
+use META6::Query;
 
 class Runner {
     has IO::Path @.files;
@@ -55,14 +57,15 @@ class Runner {
 
 sub MAIN(
     Str  $base-dir;
-    Str  :$I; #= library path to include
     Bool :$l = False; #= label streams
     Bool :$p = True; #= spawn parallel sub-processes
 ) is export(:MAIN) {
     my @files = $base-dir.IO.add('t').dir.list.grep: * ~~ /'.t'$/;
+    my $root-dir = META6::Query::root-dir $base-dir;
+    my $lib-dir  = $root-dir.add('lib');
     my $runner = Runner.new(
         files => @files,
-        flags => $I ?? « -I $I » !! (),
+        flags => « -I $lib-dir »,
         label-streams => $l,
         parallel => $p,
     );
